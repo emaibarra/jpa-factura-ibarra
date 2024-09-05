@@ -19,7 +19,8 @@ public class Domicilio {
 
     private String calle;
     private int nro;
-    @OneToOne(mappedBy = "domicilio")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_cliente")
     private Cliente cliente;
 
 }
